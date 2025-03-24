@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- 100 knocks -->
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Python 100 Knocks">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Study Session of Programming | Python 100 Knocks</title>
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/acordion.css">
+        <link rel="stylesheet" type="text/css" href="css/topScroll.css">
+    </head>
+    <body>
+        <header>
+            <h1><img src="images/stdySessionLogo.png" alt="Python100Knox" width="400px"></h1>
+            <div>
+                <p><a href="#prblm1">１問目</a></p>
+                <p><a href="#prblm2">２問目</a></p>
+                <p><a href="#prblm3">３問目</a></p>
+                <p><a href="#prblm4">４問目</a></p>
+                <p><a href="#prblm5">５問目</a></p>
+                <p><a href="#prblm6">６問目</a></p>
+            </div>
+        </header>
+        <main>
+            <p id="page-top"><a href="#">Page Top</a></p>
+            <div class="watch">
+                <p class="item"><button id="timer">あと</button></p>
+                <p class="item"><span id="rest">00分00秒</span></p>
+            </div>
+            <!-- 頭書きの area -->
+            <div class="topics">
+                <h3>今月の強化スキル</h3>
+            <p>&nbsp;&nbsp;余りは役に立つ</p>
+            <p>&nbsp;&nbsp;リストでリボルバー</p>
+            </div>            
+            <iframe src="https://trinket.io/embed/python3/07ad920c29" width="100%" height="320" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+            <!-- ここに問題、入力例を記述 -->
+            <section class="problem-area">                
+                <div class="problem">
+                    <h2 id="prblm1">#21</h2>
+                    <p>整数型の変数を 2 つ宣言して整数 X, Y を格納したのち、<br>
+                        2 つの変数の中身を入れ替えた後の 2 つの変数の値を出力してください。
+                    </p>
+                </div>                
+                <div>
+                    <h3>入力例</h3>
+                    <p>1 2</p> 
+                    <p>3 5</p>                       
+                </div>                
+            </section>
+            
+            <!-- 解答例の area -->
+            <section class="acordion-area">
+                <h3 class="title">解答例</h3>
+                <pre class="box"><code>
+                    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;white-space: nowrap;color:#000;">
+                        <li>x, y = <font style="color:#fd971f;">'1 2'</font>.split()</li>
+                        <li>x, y = y, x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# python では直接交換ができます</li>
+                        <li>print(x, y)</li>
+                        <li></li>
+                        <li>問題の趣旨に従うと</li>
+                        <li>x, y = map(int, <font style="color:#fd971f;">'1 2'</font>.split())&nbsp;&nbsp;&nbsp;&nbsp;# 整数型に変換</li>
+                        <li></li>
+                        <li></li>
+                        <li> map(関数*, 対象となる一連の要素)の形&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*()は付けない</li>
+                        <li> map 関数は全ての要素に対して同じ処理を実行します</li>
+                        <li> 上記では .split() でリストに格納された全要素を int に変換しています</li>
+                        <li></li>
+                        <li></li>
+                        <li>他の例　</li>
+                        <li>alphabet = map(ord, [<font style="color:#fd971f;">'a'</font>, <font style="color:#fd971f;">'b'</font>, <font style="color:#fd971f;">'c'</font>, <font style="color:#fd971f;">'d'</font>])&nbsp;&nbsp;&nbsp;&nbsp;# ｱﾙﾌｧﾍﾞｯﾄを ASCII ｺｰﾄﾞに変換する</li>
+                        <li>print(alphabet)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# object を返す　=　ﾒﾓﾘの節約</li>
+                        <li>print(list(alphabet))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 中身を見たければ list 化する</li>
+                        <li></li>
+                        <li>integer = map(chr, [67, 68, 69, 70])&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ｱﾙﾌｧﾍﾞｯﾄに変換する</li>
+                        <li>print(list(integer))</li>
+                        <li></li>
+                        <li>ﾘｽﾄ内包表記でも同じことができるが、map の方がやや簡潔</li>
+                        </ol>
+                </code></pre>
+            </section>
+
+            <!-- ここに問題、入力例を記述 -->
+            <section class="problem-area">                
+                <div class="problem">
+                    <h2 id="prblm2">#39</h2>
+                    <p>鉛筆の濃さは一般的に17種類あり、濃い方から順番に<br>
+
+                        6B, 5B, 4B, 3B, 2B, B, HB, F, <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H, 2H, 3H, 4H, 5H, 6H, 7H, 8H, 9H<br>
+                        
+                        というように分けられています。<br>
+                        
+                        これらの中で、k番目に濃い鉛筆の濃さを出力してください。
+                       </p>
+                </div>                
+                <div>
+                    <h3>入力例</h3>
+                    <p>
+                        ① 3<br>
+                        ② 17
+                    </p>    
+                </div>                
+            </section>
+
+             <!-- 解答例の area -->
+             <section class="acordion-area">
+                <h3 class="title">解答例</h3>
+                <pre class="box"><code>
+                    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;white-space: nowrap;color:#000;">
+                        <li>density = [<font style="color:#fd971f;">'6B'</font>, <font style="color:#fd971f;">'5B'</font>, <font style="color:#fd971f;">'4B'</font>, <font style="color:#fd971f;">'3B'</font>, <font style="color:#fd971f;">'2B'</font>, <font style="color:#fd971f;">'B'</font>, <font style="color:#fd971f;">'HB'</font>, <font style="color:#fd971f;">'F'</font>, </li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="color:#fd971f;">'H'</font>, <font style="color:#fd971f;">'2H'</font>, <font style="color:#fd971f;">'3H'</font>, <font style="color:#fd971f;">'4H'</font>, <font style="color:#fd971f;">'5H'</font>, <font style="color:#fd971f;">'6H'</font>, <font style="color:#fd971f;">'7H'</font>, <font style="color:#fd971f;">'8H'</font>, <font style="color:#fd971f;">'9H'</font>]</li>
+                        <li>print(density[k - 1])</li>
+                        <li></li>
+                        <li>別解　辞書を作るのに手間がかかるが（膨大なリストなら辞書の方が速い）</li>
+                        <li>pencil = {}</li>
+                        <li>for i in range(1, 18):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;pencil[i] = density[i - 1]</li>
+                        <li>print(pencil[k])    </li>
+                        <li></li>
+                        <li>zip 関数というものがある</li>
+                        <li>複数のｼｰｸｴﾝｽ（一連の要素）に対して並行して同時にｱｸｾｽ</li>
+                        <li>n = [i for i in range(1, 18)]</li>
+                        <li>mul = zip(n, density)</li>
+                        <li>print(list(mul))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# list化しないと object のまま</li>
+                        <li></li>
+                        <li>num = [i for i in range(10)]</li>
+                        <li>num_dens = zip(num, density)</li>
+                        <li>print(list(num_dens))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 数が合わないと短い方</li>
+                        <li></li>
+                        <li>ﾙｰﾌﾟを回さず１行で書ける</li>
+                        <li>pencil = {k:d for k, d in zip(n, density)}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# zip 関数でﾘｽﾄを連結して開く</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&　辞書内包表記</li>
+                        <li>pencil = dict(zip(n, density))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# dict 関数だともっと簡潔</li>
+                        </ol>
+                    </code></pre>
+            </section>
+
+            <!-- ここに問題、入力例を記述 -->
+            <section class="problem-area">                
+                <div class="problem">
+                    <h2 id="prblm3">#48</h2>
+                    <p>0から9までを数えるカウンタを考えます。<br><br>
+                        0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9<br><br>
+                        このカウンタの拡張として、任意の数から始められるカウンタを考えました。<br><br>
+                        2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 0 → 1<br>
+                        （2から始める例、カウンタは9まで進んだら0に戻ります）<br><br>
+                        入力から数字nを受け取り、nからカウンタをスタートさせて、<br>
+                        カウンタの値を順番に10個出力するプログラムを実装してください。
+                    </p>
+                </div>                
+                <div>
+                    <h3>入力例</h3>
+                    <p>① 0<br>
+                        ② 2<br>
+                    </p>    
+                </div>                
+            </section>
+            
+            <!-- 解答例の area -->
+            <section class="acordion-area">
+                <h3 class="title">解答例</h3>
+                <pre class="box"><code>
+                    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;white-space: nowrap;color:#000;">
+                        <li>num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</li>
+                        <li>n = 2</li>
+                        <li>for i in num[n:] + num[:n]:</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(i)</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        <li>思いつかなかったら</li>
+                        <li>for i in range(n, 10):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(i)</li>
+                        <li>for j in range(0, n):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(j)</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        <li>キューというデータ構造を考える</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;キュー：先入れ先（左から）出し</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;スタック：先入れ後（右から）出し</li>
+                        <li></li>
+                        <li>from collections import deque&nbsp;&nbsp;&nbsp;&nbsp;# 標準ﾗｲﾌﾞﾗﾘから import</li>
+                        <li></li>
+                        <li>nums = deque()</li>
+                        <li>for i in range(10):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;nums.append(i)&nbsp;&nbsp;&nbsp;&nbsp;# ０ から順にキューに入れていく</li>
+                        <li></li>
+                        <li>for j in range(n):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;nums.popleft()&nbsp;&nbsp;&nbsp;&nbsp;# 左から順に n 個取り出す</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;nums.append(j)&nbsp;&nbsp;&nbsp;&nbsp;# 取り出したら後ろに持って行く</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                        <li>print(list(nums))</li>
+                        </ol>
+                </code></pre>
+            </section>
+
+             <!-- ここに問題、入力例を記述 -->
+             <section class="problem-area">                
+                <div class="problem">
+                    <h2 id="prblm4">#54</h2>
+                    <p>配列 A の各要素 A_1, A_2, ..., A_N が与えられるので、<br>
+                        同じ値の要素が 2 つ以上含まれないように A を加工した新たな配列 B を作成してください。<br>
+                        ただし、 A に同じ値の要素が 2 つ以上あった場合、それらのうち先頭の要素を B に採用するものとします。
+                    </p>
+                </div>                
+                <div>
+                    <h3>入力例</h3>
+                    <p>
+                        ① a = [1, 1]<br>
+                        ② a = [5, 1, 2, 3, 5, 2]
+                    </p>
+                </div>                
+            </section>
+            
+            <!-- 解答例の area -->
+            <section class="acordion-area">
+                <h3 class="title">解答例</h3>
+                <pre class="box"><code>
+                    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;white-space: nowrap;color:#000;">
+                        <li>b = []</li>
+                        <li>for elm in a:</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;if elm not in b:</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.append(elm)</li>
+                        <li>print(b)</li>
+                        <li></li>
+                        <li>順序を気にしなくていいなら</li>
+                        <li>print(set(a))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 集合は順番が変わる場合があるので、本問では不適</li>
+                        </ol>
+                </code></pre>
+            </section>
+
+            <!-- ここに問題、入力例を記述 -->
+            <section class="problem-area">                
+                <div class="problem">
+                    <h2 id="prblm5">#119</h2>
+                    <p>白黒のボーダー柄を描くプログラムを作成します。<br>
+                        入力として自然数n が与えられるので、n回ボーダー柄のパターンを表示してください。<br>
+                        <br>
+                        ただし、<br>
+                        ・黒い部分は ##########（#を10個）<br>
+                        ・白い部分は ..........（.を10個）<br>
+                        で表現するものとします。<br>
+                        <br>
+                        また、ボーダー柄は黒い部分と白い部分を合わせて1回のパターンとします。<br>
+                       </p>
+                </div>                
+                <div>
+                    <h3>入力例</h3>
+                    入力例1<br>
+                    n = 1<br>
+                    →&nbsp;出力例1<br>
+                    ##########<br>
+                    ..........<br>
+                    <br>
+                    入力例2<br>
+                    n = 3<br>
+                    →&nbsp;出力例2<br>
+                    ##########<br>
+                    ..........<br>
+                    ##########<br>
+                    ..........<br>
+                    ##########<br>
+                    ..........
+                    </p>    
+                </div>                
+            </section>
+            
+            <!-- 解答例の area -->
+            <section class="acordion-area">
+                <h3 class="title">解答例</h3>
+                <pre class="box"><code>
+                    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;white-space: nowrap;color:#000;">
+                        <li>n = 3</li>
+                        <li>for _ in range(n):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:#fd971f;">'#'</font> * 10)</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:#fd971f;">'.'</font> * 10)</li>
+                        <li></li>
+                        <li>別解１</li>
+                        <li>for _ in range(n):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:#fd971f;">'#'</font> * 10 + <font style="color:#fd971f;">'\n'</font> + <font style="color:#fd971f;">'.'</font> * 10)</li>
+                        <li></li>
+                        <li>別解２ 余りは役に立つ！</li>
+                        <li>n = 3</li>
+                        <li>pattern = [<font style="color:#fd971f;">'#'</font> * 10, <font style="color:#fd971f;">'.'</font> * 10]</li>
+                        <li>for i in range(n * 2):</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;idx = i % 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 0, 1 の繰り返しの定番</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(pattern[idx])</li>
+                        </ol>
+                </code></pre>
+            </section>
+
+            <!-- ここに問題、入力例を記述 -->
+            <section class="problem-area">                
+                <div class="problem">
+                    <h2 id="prblm6">#92</h2>
+                    <p>AtCoder Beginner Contest の略称は、アルファベット 3 文字で ABC となっております。<br>
+                        そして、ABC のうち特定の回を指すときは、何回目の ABC かを 3 桁の数字で表して後ろに付け、
+                        ABC680 のように呼びます。<br>
+                        例えば ABC680 は、680 回目の ABC のことを指します。<br>
+                        <br>
+                        では、N 回目の ABC を出力するプログラムを作成してください。
+                       </p>
+                </div>                
+                <div>
+                    <h3>入力例</h3>
+                    <p>① 100<br>
+                    ② 425<br>
+                    ③ 999
+                </p>    
+                </div>                
+            </section>
+            
+            <!-- 解答例の area -->
+            <section class="acordion-area">
+                <h3 class="title">解答例</h3>
+                <pre class="box"><code>
+                    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;white-space: nowrap;color:#000;">
+                        <li>print(<font style="color:#fd971f;">'ABC'</font> + <font style="color:#fd971f;">'100'</font>.zfill(3))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 入力が必ずしも 3 桁とは限りません</li>
+                        <li></li>
+                        <li>zfill を忘れてしまったら</li>
+                        <li>if len(<font style="color:#fd971f;">'12'</font>) == 3:</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:#fd971f;">'ABC'</font> + <font style="color:#fd971f;">'12'</font>)</li>
+                        <li>elif len(<font style="color:#fd971f;">'12'</font>) == 2:</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:#fd971f;">'ABC'</font> + <font style="color:#fd971f;">'0'</font> + <font style="color:#fd971f;">'12'</font>)</li>
+                        <li>else:</li>
+                        <li>&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:#fd971f;">'ABC'</font> + <font style="color:#fd971f;">'00'</font> + <font style="color:#fd971f;">'12'</font>)</li>
+                        </ol>
+                </code></pre>
+            </section>
+            <div class="final">
+            <p><a href="final_page.html" target="blank" class="final-text">最後に</a></p>
+            </div>           
+        </main>
+        <footer>
+            <p><small>&copy; 2021 P 勉強会</small></p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="script/acordion.js"></script>
+        <script src="script/timer.js"></script>
+        <script src="script/topScroll.js"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    </body>
+</html>

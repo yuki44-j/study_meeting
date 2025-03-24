@@ -1,0 +1,84 @@
+@charset "utf-8";
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 1rem;
+}
+
+footer {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+img {
+    max-width: 100%;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.mainvisual {
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+.mainvisual img {
+    margin-bottom: 30px;
+}
+.logo-navi {
+    align-items: center;
+    display: flex;
+    width: 500px;
+}
+.logo {
+    width: 12rem;
+}
+.logo img {
+    margin: auto;
+}
+.local-nav {
+    margin: auto 0 auto auto;
+}
+
+.contents {
+    margin: auto;
+    width: 80%;
+}
+
+.inner-img,
+.inner-text {
+    width: 50%;
+}
+.inner-text {
+    line-height: 2em;
+    margin-left: 30px;
+}
+
+.crimson {
+    font-family: 'Crimson Text', serif;
+}
+
+#concept-sec,
+#work-sec {
+    align-items: center;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#work-sec {
+    flex-direction: row-reverse;
+}
+
+.copyright {
+    margin: auto 0 0 auto;
+}
